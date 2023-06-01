@@ -14,7 +14,7 @@ import os
 print("python版本:%s"% sys.version)
 
 
-sys.path.append('C:/Users/14471/Desktop/QYB-FS/QiuYiBo_DS_CNN/E-CNN/libs')
+sys.path.append('C:/Users/14471/Desktop/QYB-FS/QiuYiBo_DS_CNN/QYB/E-CNN/libs')
 import ds_layer #Dempster-Shafer layer
 import utility_layer_train #Utility layer for training
 import utility_layer_test #Utility layer for training
@@ -31,7 +31,6 @@ class CIFAR10ECNN:
         self.norm_mean = norm_mean
         self.epochs = epochs
         self.batch_size = batch_size
-
         #====================== load data ========================
         self.num_classes = 10
         (self.x_train, self.y_train), (self.x_test, self.y_test) = load_cifar10_data()
@@ -134,6 +133,7 @@ class CIFAR10ECNN:
         #print (utility_matrix)
 
         number_act_set = len(act_set)
+        self.act_set=act_set
         #================= Input ============================
         inputs = Input(shape=self.input_shape)
 
